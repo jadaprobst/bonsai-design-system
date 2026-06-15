@@ -1,0 +1,63 @@
+<!-- @dsCard group="Colors" viewport="700x220" name="Semantic Colors" subtitle="Purposeful color roles — text, surface, interactive, feedback" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--color-bg-base);padding:16px;font-family:var(--font-sans)}
+    .grp{margin-bottom:14px}
+    .grp-lbl{font-size:9px;font-weight:600;color:var(--color-text-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+    .row{display:flex;gap:6px;flex-wrap:wrap}
+    .chip{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:72px}
+    .c{width:72px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,.06)}
+    .n{font-size:8px;color:var(--color-text-muted);font-weight:500;text-align:center;line-height:1.2}
+  </style>
+</head>
+<body>
+<div class="grp">
+  <div class="grp-lbl">Backgrounds</div>
+  <div class="row">
+    <div class="chip"><div class="c" style="background:var(--color-bg-base)"></div><div class="n">bg-base</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-bg-surface)"></div><div class="n">bg-surface</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-bg-muted)"></div><div class="n">bg-muted</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-bg-brand)"></div><div class="n">bg-brand</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-bg-inset)"></div><div class="n">bg-inset</div></div>
+  </div>
+</div>
+<div class="grp">
+  <div class="grp-lbl">Text</div>
+  <div class="row">
+    <div class="chip"><div class="c" style="background:var(--color-text-primary)"></div><div class="n">text-primary</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-text-secondary)"></div><div class="n">text-secondary</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-text-muted)"></div><div class="n">text-muted</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-text-brand)"></div><div class="n">text-brand</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-text-disabled)"></div><div class="n">text-disabled</div></div>
+  </div>
+</div>
+<div class="grp">
+  <div class="grp-lbl">Interactive</div>
+  <div class="row">
+    <div class="chip"><div class="c" style="background:var(--color-interactive)"></div><div class="n">interactive</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-interactive-hover)"></div><div class="n">hover</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-interactive-active)"></div><div class="n">active</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-interactive-disabled)"></div><div class="n">disabled</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-interactive-focus)"></div><div class="n">focus</div></div>
+  </div>
+</div>
+<div class="grp">
+  <div class="grp-lbl">Feedback</div>
+  <div class="row">
+    <div class="chip"><div class="c" style="background:var(--color-success)"></div><div class="n">success</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-success-bg)"></div><div class="n">success-bg</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-warning)"></div><div class="n">warning</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-warning-bg)"></div><div class="n">warning-bg</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-error)"></div><div class="n">error</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-error-bg)"></div><div class="n">error-bg</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-info)"></div><div class="n">info</div></div>
+    <div class="chip"><div class="c" style="background:var(--color-info-bg)"></div><div class="n">info-bg</div></div>
+  </div>
+</div>
+</body>
+</html>

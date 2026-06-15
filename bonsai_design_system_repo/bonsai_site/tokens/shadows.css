@@ -1,0 +1,66 @@
+/* ─── BonsAI Shadow Tokens ────────────────────────────────────────────────── */
+/*
+ * Shadows are warm-tinted (sepia) to harmonize with the earth palette.
+ * The shadow color is derived from --color-earth-900 (#2C1810).
+ */
+
+:root {
+  /* ── Raw shadow color (RGB, for dark theme — black with slight purple tint) */
+  --shadow-rgb: 0, 0, 0;
+
+  /* ── Elevation Scale ─────────────────────────────────────────────── */
+  --shadow-xs:
+    0 1px 2px rgba(var(--shadow-rgb), 0.05);
+
+  --shadow-sm:
+    0 1px 3px rgba(var(--shadow-rgb), 0.06),
+    0 2px 6px rgba(var(--shadow-rgb), 0.04);
+
+  --shadow-md:
+    0 2px 6px  rgba(var(--shadow-rgb), 0.07),
+    0 4px 14px rgba(var(--shadow-rgb), 0.05);
+
+  --shadow-lg:
+    0 4px 12px  rgba(var(--shadow-rgb), 0.08),
+    0 8px 28px  rgba(var(--shadow-rgb), 0.06);
+
+  --shadow-xl:
+    0 8px 24px  rgba(var(--shadow-rgb), 0.10),
+    0 16px 48px rgba(var(--shadow-rgb), 0.08);
+
+  --shadow-2xl:
+    0 16px 40px rgba(var(--shadow-rgb), 0.12),
+    0 32px 64px rgba(var(--shadow-rgb), 0.10);
+
+  /* ── Inset ────────────────────────────────────────────────────────── */
+  --shadow-inset-sm:
+    inset 0 1px 3px rgba(var(--shadow-rgb), 0.06);
+  --shadow-inset:
+    inset 0 2px 6px rgba(var(--shadow-rgb), 0.08);
+
+  /* ── Focus Ring (violet brand) ───────────────────────────────────── */
+  --shadow-focus-brand:
+    0 0 0 3px rgba(167, 139, 250, 0.30);   /* violet-400 at 30% */
+  --shadow-focus-error:
+    0 0 0 3px rgba(248, 113, 113, 0.25);   /* red-400 at 25% */
+  --shadow-focus-neutral:
+    0 0 0 3px rgba(var(--shadow-rgb), 0.12);
+
+  /* ── Button Primary (violet CTA) ──────────────────────────────────── */
+  --shadow-button-primary:
+    0 2px 8px rgba(167, 139, 250, 0.30),
+    0 4px 16px rgba(167, 139, 250, 0.15);
+
+  /* ── Bonsai Glow (sage success) ──────────────────────────────────── */
+  --shadow-bonsai-glow:
+    0 0 0 4px rgba(52, 211, 153, 0.20),
+    0 0 24px rgba(52, 211, 153, 0.15);
+
+  /* ── Semantic ─────────────────────────────────────────────────────── */
+  --shadow-card:   var(--shadow-md);
+  --shadow-modal:  var(--shadow-xl);
+  --shadow-sheet:  var(--shadow-2xl);
+  --shadow-toast:  var(--shadow-lg);
+  --shadow-nav:    0 -1px 0 rgba(var(--shadow-rgb), 0.06),
+                   0 -4px 20px rgba(var(--shadow-rgb), 0.05);
+}
