@@ -1,9 +1,0 @@
-/* ─── BonsAI Global Styles Entry Point ───────────────────────────────────── */
-/* This file is import-only. All rules live in the imported partials.         */
-
-@import './tokens/colors.css';
-@import './tokens/typography.css';
-@import './tokens/spacing.css';
-@import './tokens/radii.css';
-@import './tokens/shadows.css';
-@import './tokens/motion.css';
