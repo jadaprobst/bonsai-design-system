@@ -1,0 +1,28 @@
+/* ─── BonsAI Border Radius Tokens ────────────────────────────────────────── */
+
+:root {
+  /* ── Base Scale ───────────────────────────────────────────────────── */
+  --radius-none: 0;
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-2xl:  24px;
+  --radius-3xl:  32px;
+  --radius-full: 9999px;   /* pill */
+
+  /* ── Semantic Aliases ─────────────────────────────────────────────── */
+  --radius-card:       var(--radius-xl);    /* 20px — main card surface */
+  --radius-card-inner: var(--radius-lg);    /* 16px — nested cards */
+  --radius-button:     var(--radius-full);  /* pill — signature button shape */
+  --radius-input:      var(--radius-md);    /* 12px */
+  --radius-badge:      var(--radius-full);  /* pill */
+  --radius-tag:        var(--radius-sm);    /* 8px */
+  --radius-modal:      var(--radius-2xl);   /* 24px */
+  --radius-sheet:      var(--radius-3xl);   /* 32px — bottom sheet top corners */
+  --radius-avatar:     var(--radius-full);  /* circle */
+  --radius-icon:       var(--radius-sm);    /* 8px — icon container */
+  --radius-chip:       var(--radius-full);  /* pill */
+  --radius-toast:      var(--radius-lg);    /* 16px */
+}
