@@ -1,0 +1,104 @@
+<!-- @dsCard group="Components" viewport="700x600" name="Gamification" subtitle="BonsaiTree (4 branches) · HabitCard · StreakBadge" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-sans);background:var(--color-bg-base);padding:20px}
+    .sec{margin-bottom:22px}
+    .lbl{font-size:var(--text-2xs);font-weight:var(--font-semibold);color:var(--color-text-muted);letter-spacing:var(--tracking-widest);text-transform:uppercase;margin-bottom:10px}
+    .row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}
+    .branch-pill{display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:var(--font-semibold)}
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { BonsaiTree, HabitCard, StreakBadge } = window.BonsAIDesignSystem_9e0b99;
+
+const branchInfo = [
+  { key:'self',          label:'Self',          color:'#6550C8', bg:'#F5F3FF', desc:'Habits, health, identity' },
+  { key:'purpose',       label:'Purpose',       color:'#2D6A4F', bg:'#EDF7F0', desc:'Goals, academics, focus' },
+  { key:'character',     label:'Character',     color:'#0891B2', bg:'#ECFEFF', desc:'Values, integrity, mindset' },
+  { key:'relationships', label:'Relationships', color:'#4F46E5', bg:'#EEF2FF', desc:'Friends, family, connection' },
+];
+
+function GameShowcase() {
+  const [lvls, setLvls] = React.useState({ self:3, purpose:4, character:2, relationships:1 });
+  const [habits, setHabits] = React.useState({ sleep:true, exercise:false, water:true, journal:false, social:true });
+  const toggle = k => setHabits(h=>({...h,[k]:!h[k]}));
+  const setLvl = (k,v) => setLvls(l=>({...l,[k]:v}));
+
+  return (
+    <div>
+      {/* 4-branch tree with controls */}
+      <div className="sec">
+        <div className="lbl">4-branch growth model — drag sliders to grow each branch</div>
+        <div style={{display:'flex',gap:20,alignItems:'flex-start',flexWrap:'wrap'}}>
+          <BonsaiTree branches={lvls} size={200} showLabels animated />
+          <div style={{flex:1,minWidth:240,display:'flex',flexDirection:'column',gap:10}}>
+            {branchInfo.map(b=>(
+              <div key={b.key} style={{background:b.bg,borderRadius:12,padding:'10px 12px',border:`1px solid ${b.color}30`}}>
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:6}}>
+                  <span style={{fontSize:'var(--text-xs)',fontWeight:700,color:b.color}}>{b.label}</span>
+                  <span style={{fontSize:'var(--text-xs)',color:'var(--color-text-muted)',fontWeight:600}}>Level {lvls[b.key]}</span>
+                </div>
+                <input type="range" min={0} max={5} value={lvls[b.key]}
+                  onChange={e=>setLvl(b.key,+e.target.value)}
+                  style={{width:'100%',accentColor:b.color}}/>
+                <p style={{fontSize:'10px',color:'var(--color-text-muted)',marginTop:4}}>{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Branch states side by side */}
+      <div className="sec">
+        <div className="lbl">Branch identity — one highlighted per tree</div>
+        <div className="row">
+          {branchInfo.map(b=>(
+            <div key={b.key} style={{display:'flex',flexDirection:'column',alignItems:'center',gap:6}}>
+              <BonsaiTree branches={{...{self:1,purpose:1,character:1,relationships:1},[b.key]:5}} size={100} animated={false}/>
+              <span className="branch-pill" style={{background:b.bg,color:b.color}}>{b.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Habit cards + streak */}
+      <div className="sec">
+        <div className="lbl">Habit Cards · StreakBadge</div>
+        <div className="row">
+          {[
+            {name:'Sleep',icon:'🌙',color:'lavender',streak:12,done:habits.sleep},
+            {name:'Exercise',icon:'🏃',color:'green',streak:4,done:habits.exercise},
+            {name:'Water',icon:'💧',color:'sky',streak:7,done:habits.water},
+            {name:'Journal',icon:'📓',color:'earth',streak:0,done:habits.journal},
+            {name:'Social',icon:'💬',color:'gold',streak:3,done:habits.social},
+          ].map(h=>(
+            <div key={h.name} style={{width:130}}>
+              <HabitCard {...h} completed={h.done} onToggle={()=>toggle(h.name.toLowerCase())} />
+            </div>
+          ))}
+          <div style={{display:'flex',flexDirection:'column',gap:8}}>
+            <StreakBadge count={7} size="sm"/>
+            <StreakBadge count={21} size="md"/>
+            <StreakBadge count={100} size="lg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<GameShowcase/>);
+</script>
+</body>
+</html>

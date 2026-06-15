@@ -1,0 +1,29 @@
+<svg viewBox="-4 -4 240 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BonsAI">
+
+  
+  <g transform="translate(0,4) scale(0.72)">
+    <rect x="15" y="51" width="26" height="4.5" rx="2.25" fill="#A68262"></rect>
+    <path d="M17 55.5 L14 65 L42 65 L39 55.5Z" fill="#C4956A"></path>
+    <ellipse cx="28" cy="53" rx="13" ry="4.5" fill="#8B6B4E"></ellipse>
+    <path d="M28 51 C27 44 25 37 23 29 C22 22 25 15 28 8" stroke="#4A3728" stroke-width="2.75" fill="none" stroke-linecap="round"></path>
+    <path d="M24 32 C18 29 11 27 5 26" stroke="#4A3728" stroke-width="1.75" fill="none" stroke-linecap="round"></path>
+    <path d="M26 22 C31 19 37 17 45 16" stroke="#4A3728" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
+    <circle cx="4" cy="21" r="8.5" fill="#5038A8"></circle>
+    <circle cx="-1" cy="16" r="7.5" fill="#7C3AED"></circle>
+    <circle cx="9" cy="15" r="7.5" fill="#A78BFA"></circle>
+    <circle cx="45" cy="13" r="8" fill="#0E7490"></circle>
+    <circle cx="51" cy="9" r="7" fill="#0891B2"></circle>
+    <circle cx="41" cy="8" r="7" fill="#22D3EE"></circle>
+    <circle cx="28" cy="9" r="10" fill="#2D6A4F"></circle>
+    <circle cx="20" cy="3" r="8.5" fill="#4F46E5"></circle>
+    <circle cx="36" cy="3" r="8.5" fill="#6366F1"></circle>
+    <circle cx="28" cy="-3" r="7.5" fill="#818CF8"></circle>
+    <circle cx="22" cy="-8" r="6" fill="#A5B4FC"></circle>
+    <circle cx="34" cy="-8" r="6" fill="#C7D2FE"></circle>
+  </g>
+
+  
+  <text x="58" y="44">
+    <tspan font-family="&#39;Cormorant Garamond&#39;, Georgia, serif" font-size="38" font-weight="500" fill="#2C1810">Bons</tspan><tspan font-family="&#39;Plus Jakarta Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif" font-size="34" font-weight="800" fill="#6550C8" dy="1">AI</tspan>
+  </text>
+</svg>
